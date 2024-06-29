@@ -28,7 +28,7 @@ exports.empolyeetask=async(req,res)=>{
 
 exports.alltaskdata=async(req,res)=>{
     try{
-    const alldata=await taskTable.find()
+    const alldata=await taskTable.find().sort({createdAt:-1})
     res.status(200).json({
         alldata,
         status:200
